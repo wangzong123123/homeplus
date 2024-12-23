@@ -132,7 +132,7 @@
     })
 
     function loadApp() {
-        var url = "app/getVaildApp";
+        var url = "/app/getVaildApp";
         $.ajax ({
             "url": url,
             "type": "Post",
@@ -183,7 +183,7 @@
         $(".submit-apply").click(function () {
             $(this).text("已经申请");
             $(this).attr({"disabled": "disabled"})
-            var url = "app/apply";
+            var url = "/app/apply";
             var data = "id=" + $(this).attr("id");
             $.ajax ({
                 "url": url,
@@ -219,7 +219,7 @@
     function loginSuccess() {
         $(".log-out").css({"display": "none"});
         $.ajax({
-            "url": "user/loginSuccess",
+            "url": "/user/loginSuccess",
             "type": "Post",
             "success": function (json) {
                 if (json.state == 200) {
@@ -234,7 +234,7 @@
     // 退出系统
     function logout() {
         $.ajax ({
-            "url": "user/logout",
+            "url": "/user/logout",
             "type": "Post",
             "success": function (json) {
                 if (json.state == 200) {

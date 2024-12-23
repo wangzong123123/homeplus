@@ -43,7 +43,7 @@ $(document).ready(function () {
 
 // 加载家政人员的信息
 function showContent(id) {
-    var url = "hk/loadContent";
+    var url = "/hk/loadContent";
     var data = "param=" + id;
     $.ajax ({
         "url": url,
@@ -77,7 +77,7 @@ function message(id) {
     })
 
     $(".submit-msg").click(function () {
-        var url = "message/insertMessage";
+        var url = "/message/insertMessage";
         var data = "id=" + id + "&msgContent=" + $(".msg-input").val();
         $.ajax({
             "url": url,
@@ -105,7 +105,7 @@ function message(id) {
 
 // 加载评价
 function loadComment(id) {
-    var url = "hk/loadComment";
+    var url = "/hk/loadComment";
     var data = "param=" + id;
     $.ajax ({
         "url": url,
@@ -254,7 +254,7 @@ function initAddress() {
 function loginSuccess() {
     $(".log-out").css({"display": "none"});
     $.ajax({
-        "url": "user/loginSuccess",
+        "url": "/user/loginSuccess",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {
@@ -269,7 +269,7 @@ function loginSuccess() {
 // 退出系统
 function logout() {
     $.ajax ({
-        "url": "user/logout",
+        "url": "/user/logout",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {

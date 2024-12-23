@@ -140,7 +140,7 @@
 
     // 加载用户的信息
     function loadCustomerInfo() {
-        var url = "selectCustomer";
+        var url = "/person/selectCustomer";
         $.ajax({
             "url": url,
             "dataType": "json",
@@ -151,7 +151,7 @@
                     $(".nickname").val(json.data.cmNickname);
                     $(".phone").val(json.data.cmPhone);
                     $(".email").val(json.data.cmEmail);
-                    $("#head-img").attr("src", "/homeplus"+json.data.cmHeadPhoto);
+                    $("#head-img").attr("src", json.data.cmHeadPhoto);
                 } else if (json.state == 407) {
                     alert(json.message);
                 }
@@ -161,7 +161,7 @@
 
     function uploadInfo() {
         var formData = new FormData($("#info")[0]);
-        var url = "updateCustomer";
+        var url = "/person/updateCustomer";
         $.ajax({
             "url": url,
             "data": formData,
@@ -196,7 +196,7 @@
             var reader = new FileReader();  // 异步读取存储在用户计算机上的文件
             reader.readAsDataURL(fil); // 开始读取指定的Blob对象或File对象中的内容
             reader.onload = function(){
-                document.getElementById("head-img").src = "homeplus/"+reader.result;  // 添加图片到指定容器中
+                document.getElementById("head-img").src = reader.result;  // 添加图片到指定容器中
             };
         }
     }

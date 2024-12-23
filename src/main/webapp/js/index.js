@@ -7,9 +7,9 @@ $(document).ready(function(){
 
 	loadType();
 
-	loadHouseKeeperList("index/getTopHousekeeper", $(".housekeeper-list-hour"));
-	loadHouseKeeperList("index/getTopRepair", $(".housekeeper-list-repair"));
-	loadHouseKeeperList("index/getTopMove", $(".housekeeper-list-move"));
+	loadHouseKeeperList("/index/getTopHousekeeper", $(".housekeeper-list-hour"));
+	loadHouseKeeperList("/index/getTopRepair", $(".housekeeper-list-repair"));
+	loadHouseKeeperList("/index/getTopMove", $(".housekeeper-list-move"));
 
 	$(".big-type").on("click", ".first-type", function () {
         loadSmallType($(this).next(".small-type"), $(this).attr("id"));
@@ -30,7 +30,7 @@ function searchContent() {
         alert($(".search-input").val())
         var data = "param=" + $(".search-input").val();
         $.ajax ({
-            "url": "index/getTypeID",
+            "url": "/index/getTypeID",
             "data": data,
             "dataType": "json",
             "type": "Get",
@@ -46,7 +46,7 @@ function searchContent() {
 
 // 加载大的类型
 function loadType () {
-	var url = "index/getAllType";
+	var url = "/index/getAllType";
 	$.ajax({
 		"url": url,
 		"dataType": "json",
@@ -71,7 +71,7 @@ function loadType () {
 
 // 加载小的类型
 function loadSmallType(container, type_id) {
-    var url = "index/getAllSmallType";
+    var url = "/index/getAllSmallType";
     var data = "type_id=" + type_id;
     $.ajax({
         "url": url,
@@ -99,7 +99,7 @@ function loadSmallType(container, type_id) {
 // 加载推荐人员
 function loadRecommend(container) {
     $.ajax ({
-        "url": "index/getRecommend",
+        "url": "/index/getRecommend",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {
@@ -171,7 +171,7 @@ function getLabelList(str) {
 function loginSuccess() {
     $(".log-out").css({"display": "none"});
     $.ajax({
-        "url": "user/loginSuccess",
+        "url": "/user/loginSuccess",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {
@@ -186,7 +186,7 @@ function loginSuccess() {
 // 退出系统
 function logout() {
     $.ajax ({
-        "url": "user/logout",
+        "url": "/user/logout",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {

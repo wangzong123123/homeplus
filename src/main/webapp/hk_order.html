@@ -155,7 +155,7 @@
 
     // 加载家政人员的所有订单
     function loadHKOrder() {
-        var url = "order/getOrderListByHKID";
+        var url = "/order/getOrderListByHKID";
         $.ajax ({
             "url": url,
             "type": "Post",
@@ -218,7 +218,7 @@
 
     function acceptOrder() {
         $(".submit-accept").parent().on("click", ".submit-accept", function () {
-            var url = "order/acceptOrder";
+            var url = "/order/acceptOrder";
             var idVal = $(this).attr("id");
             $.ajax ({
                 "url": url,
@@ -240,7 +240,7 @@
 
     function finishOrder() {
         $(".submit-finish").parent().on("click", ".submit-finish", function () {
-            var url = "order/finishOrder";
+            var url = "/order/finishOrder";
             var idVal = $(this).attr("id");
             $.ajax ({
                 "url": url,
@@ -263,7 +263,7 @@
         $(".submit-cancel").parent().on("click", ".submit-cancel", function() {
             var idVal = $(this).attr("id");
             $.ajax ({
-                "url": "order/cancelOrder",
+                "url": "/order/cancelOrder",
                 "data": "id=" + idVal,
                 "dataType": "json",
                 "type": "Post",
@@ -302,7 +302,7 @@
     function loginSuccess() {
         $(".log-out").css({"display": "none"});
         $.ajax({
-            "url": "user/loginSuccess",
+            "url": "/user/loginSuccess",
             "type": "Post",
             "success": function (json) {
                 if (json.state == 200) {
@@ -317,7 +317,7 @@
     // 退出系统
     function logout() {
         $.ajax ({
-            "url": "user/logout",
+            "url": "/user/logout",
             "type": "Post",
             "success": function (json) {
                 if (json.state == 200) {

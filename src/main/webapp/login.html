@@ -140,7 +140,7 @@
     })
 
 	$("#submit").click(function () {
-	    var url = "user/login";
+	    var url = "/user/login";
 		var username = $("input[name='username']").val();
 		var password = $("input[name='password']").val();
 		var vertifyCode = $("input[name = 'vertifyCode']").val();
@@ -171,7 +171,7 @@
 
 	// 更换验证码
 	function updateVertifyCode() {
-        var url = "user/refresh";
+        var url = "/user/refresh";
         $.ajax({
             "url": url,
             "dataType": "json",

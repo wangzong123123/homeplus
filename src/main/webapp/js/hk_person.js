@@ -26,7 +26,7 @@ function showFrame(elem) {
 function loginSuccess() {
     $(".log-out").css({"display": "none"});
     $.ajax({
-        "url": "user/loginSuccess",
+        "url": "/user/loginSuccess",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {
@@ -41,7 +41,7 @@ function loginSuccess() {
 // 退出系统
 function logout() {
     $.ajax ({
-        "url": "user/logout",
+        "url": "/user/logout",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {

@@ -81,7 +81,7 @@
 
     // 展示所有的消息
     function showAllMessage() {
-        var url = "message/getMessageByID";
+        var url = "/message/getMessageByID";
         $.ajax({
             "url": url,
             "dataType": "json",
@@ -119,7 +119,7 @@
     // 展示一条信息的内容
     function showContent(elem) {
         $.ajax({
-            "url": "person/getSingleMessage",
+            "url": "/person/getSingleMessage",
             "data": "id=" + elem.attr("id"),
             "dataType": "json",
             "type": "Post",
@@ -136,7 +136,7 @@
     // 删除一条消息
     function deleteSingleMessage(elem) {
         $.ajax({
-            "url": "person/deleteSingleMessage",
+            "url": "/person/deleteSingleMessage",
             "data": "id=" + elem.attr("id"),
             "dataType": "json",
             "type": "Post",

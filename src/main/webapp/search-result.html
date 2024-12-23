@@ -161,7 +161,7 @@
 
     // 加载搜索结果
     function loadResult(container, param) {
-        var url = "result/loadSearchResult"
+        var url = "/result/loadSearchResult"
         var data = "param=" + param;
         $.ajax ({
             "url": url,
@@ -216,7 +216,7 @@
     }
 
     function loadFilterResult(container, id, settle) {
-        var url = "result/loadSearchResult";
+        var url = "/result/loadSearchResult";
         var data = "param=" + id;
         $.ajax({
             "url": url,
@@ -276,7 +276,7 @@
     function loginSuccess() {
         $(".log-out").css({"display": "none"});
         $.ajax({
-            "url": "user/loginSuccess",
+            "url": "/user/loginSuccess",
             "type": "Post",
             "success": function (json) {
                 if (json.state == 200) {
@@ -291,7 +291,7 @@
     // 退出系统
     function logout() {
         $.ajax({
-            "url": "user/logout",
+            "url": "/user/logout",
             "type": "Post",
             "success": function (json) {
                 if (json.state == 200) {

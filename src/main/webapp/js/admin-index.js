@@ -66,7 +66,7 @@ $(document).ready(function () {
 // 获取登录用户的用户名
 function getLoginUser() {
     $.ajax({
-        "url": "admin/getCurrentUsername",
+        "url": "/admin/getCurrentUsername",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {
@@ -81,7 +81,7 @@ function getLoginUser() {
 
 // 获取所有的用户信息
 function getAllLogin(container) {
-    var url = "admin/selectAllLogin";
+    var url = "/admin/selectAllLogin";
     $.ajax({
         "url": url,
         "dataType": "json",
@@ -141,7 +141,7 @@ function getAllLogin(container) {
 // 获取所有已上传认证资料的消费者认证信息
 function getAllCustomerCertify(container) {
     $.ajax({
-        "url": "admin/getAllCustomerCertify",
+        "url": "/admin/getAllCustomerCertify",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {
@@ -193,7 +193,7 @@ function getAllCustomerCertify(container) {
 // 获取所有已上传认证资料的家政人员认证信息
 function getAllHousekeeperCertify(container) {
     $.ajax({
-        "url": "admin/getAllHousekeeperCertify",
+        "url": "/admin/getAllHousekeeperCertify",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {
@@ -244,7 +244,7 @@ function getAllHousekeeperCertify(container) {
 // 获取所有已上传认证资料的公司认证信息
 function getAllCompanyCertify(container) {
     $.ajax({
-        "url": "admin/getAllCompanyCertify",
+        "url": "/admin/getAllCompanyCertify",
         "type": "Post",
         "success": function (json) {
             if (json.state == 200) {
@@ -301,7 +301,7 @@ function getAllCompanyCertify(container) {
 function searchByPhone(container) {
     $(".search-btn").click(function () {
         $.ajax ({
-            "url": "admin/getUserByPhone",
+            "url": "/admin/getUserByPhone",
             "data": "phone=" + $(".search-input").val(),
             "dataType": "json",
             "type": "Post",
@@ -365,7 +365,7 @@ function searchByPhone(container) {
 
 // 修改用户信息
 function modifyUser(id) {
-        var url = "admin/updateUserInfo";
+        var url = "/admin/updateUserInfo";
         var data = "id=" + id + "&password=" + $(".user-password").val() + "&role=" +$(".user-role").val() + "&status=" + $("input[name='user-status']").val();
         $.ajax ({
             "url": url,
@@ -383,7 +383,7 @@ function modifyUser(id) {
 
 // 获取所有的用户信息
 function getAllLogin(container) {
-    var url = "admin/selectAllLogin";
+    var url = "/admin/selectAllLogin";
     $.ajax({
         "url": url,
         "dataType": "json",
@@ -444,7 +444,7 @@ function showCustomerDetail() {
     $(".cm-see-btn").parent().on("click", "button", function () {
         var id = $(this).attr("id");
         $.ajax ({
-            "url": "admin/getCustomerByID",
+            "url": "/admin/getCustomerByID",
             "data": "id=" + id,
             "dataType": "json",
             "type": "Post",
@@ -467,7 +467,7 @@ function showHousekeeperDetail() {
     $(".hk-see-btn").parent().on("click", "button", function () {
         var id = $(this).attr("id");
         $.ajax ({
-            "url": "admin/getHousekeeperByID",
+            "url": "/admin/getHousekeeperByID",
             "data": "id=" + id,
             "dataType": "json",
             "type": "Post",
@@ -491,7 +491,7 @@ function showCompanyDetail() {
     $(".cp-see-btn").parent().on("click", "button", function () {
         var id = $(this).attr("id");
         $.ajax ({
-            "url": "admin/getCompanyByID",
+            "url": "/admin/getCompanyByID",
             "data": "id=" + id,
             "dataType": "json",
             "type": "Post",
@@ -515,7 +515,7 @@ function cancelCustomerCertify() {
     $(".cm-cancel").parent().on("click", "button", function () {
         var id = $(this).attr("id");
         $.ajax ({
-            "url": "admin/cancelCustomerByID",
+            "url": "/admin/cancelCustomerByID",
             "data": "id=" + id,
             "dataType": "json",
             "type": "Post",
@@ -541,7 +541,7 @@ function confirmCustomerCertify() {
     $(".cm-certify").parent().on("click", "button", function () {
         var id = $(this).attr("id");
         $.ajax ({
-            "url": "admin/certifyCustomerByID",
+            "url": "/admin/certifyCustomerByID",
             "data": "id=" + id,
             "dataType": "json",
             "type": "Post",
@@ -568,7 +568,7 @@ function cancelHousekeeperCertify() {
     $(".hk-cancel").parent().on("click", "button", function () {
         var id = $(this).attr("id");
         $.ajax ({
-            "url": "admin/cancelHousekeeperByID",
+            "url": "/admin/cancelHousekeeperByID",
             "data": "id=" + id,
             "dataType": "json",
             "type": "Post",
@@ -594,7 +594,7 @@ function confirmHousekeeperCertify() {
     $(".hk-certify").parent().on("click", "button", function () {
         var id = $(this).attr("id");
         $.ajax ({
-            "url": "admin/certifyHousekeeperByID",
+            "url": "/admin/certifyHousekeeperByID",
             "data": "id=" + id,
             "dataType": "json",
             "type": "Post",
@@ -621,7 +621,7 @@ function cancelCompanyCertify() {
     $(".cp-cancel").parent().on("click", "button", function () {
         var id = $(this).attr("id");
         $.ajax ({
-            "url": "admin/cancelCompanyByID",
+            "url": "/admin/cancelCompanyByID",
             "data": "id=" + id,
             "dataType": "json",
             "type": "Post",
@@ -647,7 +647,7 @@ function confirmCompanyCertify() {
     $(".cp-certify").parent().on("click", "button", function () {
         var id = $(this).attr("id");
         $.ajax ({
-            "url": "admin/certifyCompanyByID",
+            "url": "/admin/certifyCompanyByID",
             "data": "id=" + id,
             "dataType": "json",
             "type": "Post",
@@ -690,7 +690,7 @@ function addAdmin() {
     var genderVal = $(".gender").val();
     var phoneVal = $(".phone").val();
     var passwordVal = $(".init-password").val();
-    var url = "admin/insertAdmin";
+    var url = "/admin/insertAdmin";
     var data = "name=" + nameVal +"&gender=" + genderVal + "&phone=" + phoneVal + "&password=" + passwordVal;
     $.ajax({
         "url": url,
@@ -721,7 +721,7 @@ function addCustomer () {
     var cityVal = $(".city").text();
     var areaVal = $(".area").text();
     var address = provinceVal + "-" + cityVal + "-" +areaVal;
-    var url = "admin/insertCustomer";
+    var url = "/admin/insertCustomer";
     var data = "nickname=" + nicknameVal + "&name=" + nameVal + "&gender=" + genderVal + "&phone=" + phoneVal
                 + "&email=" +emailVal + "&password=" + passwordVal + "&address=" + address;
     $.ajax ({
@@ -756,7 +756,7 @@ function addHousekeeper () {
 
 // 修改用户状态的函数
 function deleteLogin (usernameVal) {
-    var url = "admin/updateLoginStatus";
+    var url = "/admin/updateLoginStatus";
     var data = "username=" + usernameVal;
     $.ajax({
         "url": url,
@@ -776,7 +776,7 @@ function deleteLogin (usernameVal) {
 // 渲染echarts
 $(function () {
     $.ajax({
-        url:"admin/getOrderData",
+        url:"/admin/getOrderData",
         type:"GET",
         success:function (result) {
             var data1 = new Array();
@@ -898,7 +898,7 @@ $(function () {
     })
 
     $.ajax({
-        url:"admin/getAppoimentData",
+        url:"/admin/getAppoimentData",
         type:"GET",
         success:function (result) {
             var data1 = new Array();

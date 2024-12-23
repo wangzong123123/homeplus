@@ -132,7 +132,7 @@
 
     // 加载用户的信息
     function loadHousekeeperInfo() {
-        var url = "hk/getHKPerson";
+        var url = "/hk/getHKPerson";
         $.ajax({
             "url": url,
             "dataType": "json",
@@ -153,7 +153,7 @@
 
     function uploadInfo() {
         var formData = new FormData($("#info")[0]);
-        var url = "hk/updateHousekeeperInfo";
+        var url = "/hk/updateHousekeeperInfo";
         $.ajax({
             "url": url,
             "data": formData,

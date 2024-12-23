@@ -112,7 +112,7 @@
     // 加载家政人员的认证状态
     function loadCertifyStatus() {
         $.ajax ({
-            "url": "hk/getCertifyStatus",
+            "url": "/hk/getCertifyStatus",
             "type": "Post",
             "success": function (json) {
                 if (json.state == 200) {
@@ -135,7 +135,7 @@
 
     // 家政人员认证
     function certifyHousekeeper() {
-        var url = "hk/certifyHKPerson";
+        var url = "/hk/certifyHKPerson";
         var formData = new FormData($("#certify")[0]);
         $.ajax ({
             "url": url,
@@ -156,7 +156,7 @@
 
     // 加载认证信息...
     function loadCertify() {
-        var url = "hk/getHKPerson";
+        var url = "/hk/getHKPerson";
         $.ajax({
             "url": url,
             "dataType": "json",

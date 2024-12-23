@@ -123,7 +123,7 @@ public class UserController extends BaseController {
     public String userLogout (HttpSession session) {
         session.removeAttribute("username");
         session.invalidate();
-        return "redirect:../login.html";
+        return "redirect:/login";
     }
 
     /**

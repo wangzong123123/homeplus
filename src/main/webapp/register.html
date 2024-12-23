@@ -172,11 +172,13 @@
 	    if (!testFull()) {
 	        alert("请将注册信息填写完整！");
 		} else {
-            var url = "user/register"
+            var url = "/user/register"
             var username = $("input[name='username']").val();
             var password = $("input[name='password']").val();
             var role = $("input[name='user-type']:checked").val();
+            alert(role);
             var data = "username="+username+"&password="+password+"&role="+role;
+            alert(data);
             $.ajax({
                 "url": url,
                 "data": data,
